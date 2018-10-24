@@ -2,6 +2,8 @@
 #import "DDYQRCode.h"
 #import "DDYQRCodeImgVC.h"
 
+#define DDYTop (self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height)
+
 @interface ViewController ()
 
 @end
@@ -12,21 +14,21 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     UIButton *qrCodeBtn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    qrCodeBtn1.frame = CGRectMake(15, 50, [UIScreen mainScreen].bounds.size.width-30, 30);
+    qrCodeBtn1.frame = CGRectMake(15, DDYTop+50, [UIScreen mainScreen].bounds.size.width-30, 30);
     [qrCodeBtn1 setBackgroundColor:[UIColor lightGrayColor]];
     [qrCodeBtn1 setTitle:@"扫描二维码1" forState:UIControlStateNormal];
     [qrCodeBtn1 addTarget:self action:@selector(handleScan1) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:qrCodeBtn1];
     
     UIButton *qrCodeBtn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    qrCodeBtn2.frame = CGRectMake(15, 100, [UIScreen mainScreen].bounds.size.width-30, 30);
+    qrCodeBtn2.frame = CGRectMake(15, DDYTop+100, [UIScreen mainScreen].bounds.size.width-30, 30);
     [qrCodeBtn2 setBackgroundColor:[UIColor lightGrayColor]];
     [qrCodeBtn2 setTitle:@"扫描二维码2" forState:UIControlStateNormal];
     [qrCodeBtn2 addTarget:self action:@selector(handleScan2) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:qrCodeBtn2];
     
     UIButton *myCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    myCodeBtn.frame = CGRectMake(15, 150, [UIScreen mainScreen].bounds.size.width-30, 30);
+    myCodeBtn.frame = CGRectMake(15, DDYTop+150, [UIScreen mainScreen].bounds.size.width-30, 30);
     [myCodeBtn setBackgroundColor:[UIColor lightGrayColor]];
     [myCodeBtn setTitle:@"我的二维码" forState:UIControlStateNormal];
     [myCodeBtn addTarget:self action:@selector(handleMyQRCode) forControlEvents:UIControlEventTouchUpInside];

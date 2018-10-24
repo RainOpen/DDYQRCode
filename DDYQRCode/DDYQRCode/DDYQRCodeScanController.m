@@ -68,7 +68,7 @@
         [_tipLabel setTextColor:[UIColor whiteColor]];
         [_tipLabel setTextAlignment:NSTextAlignmentCenter];
         [_tipLabel setText:DDYQRCodeI18n(@"DDYQRCodeScanTip")];
-        [_tipLabel setFont:[UIFont systemFontOfSize:14]];
+        [_tipLabel setFont:[UIFont systemFontOfSize:13]];
         [_tipLabel setPreferredMaxLayoutWidth:DDYScanW];
         [_tipLabel setNumberOfLines:0];
         [_tipLabel setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
