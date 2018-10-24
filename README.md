@@ -3,7 +3,7 @@
 二维码/条形码生成，二维码扫描(相机/图片/相册扫描)，光强检测(开灯)，扫描结果音效，扫描镂空界面，各种样式二维码
 
 
- ![DDYQRCodeCamera.jpg](https://github.com/starainDou/DDYDemoImage/blob/master/DDYQRCodeCamera.jpg) ![DDYQRCodeImage.png](https://github.com/starainDou/DDYDemoImage/blob/master/DDYQRCodeImage.png)
+ ![DDYQRCodeGrid.jpg](https://github.com/starainDou/DDYDemoImage/blob/master/DDYQRCodeGrid.jpg) ![DDYQRCodeLine.jpg](https://github.com/starainDou/DDYDemoImage/blob/master/DDYQRCodeLine.jpg) ![DDYQRCodeImage.jpg](https://github.com/starainDou/DDYDemoImage/blob/master/DDYQRCodeImage.jpg)
 
 > # 集成
 
