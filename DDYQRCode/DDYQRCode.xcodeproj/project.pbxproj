@@ -18,6 +18,7 @@
 		A469EAD5217EC8FF00174EAD /* DDYQRCodeScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = A469EAD4217EC8FF00174EAD /* DDYQRCodeScanController.m */; };
 		A469EAD8217ECB3400174EAD /* DDYQRCodeResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = A469EAD7217ECB3400174EAD /* DDYQRCodeResultController.m */; };
 		A469EADB21800AEF00174EAD /* NSBundle+DDYQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = A469EADA21800AEF00174EAD /* NSBundle+DDYQRCode.m */; };
+		A469EAE52180246600174EAD /* DDYQRCodeImgVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A469EAE42180246600174EAD /* DDYQRCodeImgVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		A469EAD7217ECB3400174EAD /* DDYQRCodeResultController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDYQRCodeResultController.m; sourceTree = "<group>"; };
 		A469EAD921800AEF00174EAD /* NSBundle+DDYQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+DDYQRCode.h"; sourceTree = "<group>"; };
 		A469EADA21800AEF00174EAD /* NSBundle+DDYQRCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+DDYQRCode.m"; sourceTree = "<group>"; };
+		A469EAE32180246500174EAD /* DDYQRCodeImgVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDYQRCodeImgVC.h; sourceTree = "<group>"; };
+		A469EAE42180246600174EAD /* DDYQRCodeImgVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDYQRCodeImgVC.m; sourceTree = "<group>"; };
+		A469EAE6218024BF00174EAD /* DDYQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDYQRCode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 				A469EAD7217ECB3400174EAD /* DDYQRCodeResultController.m */,
 				A469EAD921800AEF00174EAD /* NSBundle+DDYQRCode.h */,
 				A469EADA21800AEF00174EAD /* NSBundle+DDYQRCode.m */,
+				A469EAE6218024BF00174EAD /* DDYQRCode.h */,
 			);
 			path = DDYQRCode;
 			sourceTree = "<group>";
@@ -98,6 +103,8 @@
 				A469EAC2217EAEED00174EAD /* main.m */,
 				A469EAC3217EAEED00174EAD /* ViewController.h */,
 				A469EAC4217EAEED00174EAD /* ViewController.m */,
+				A469EAE32180246500174EAD /* DDYQRCodeImgVC.h */,
+				A469EAE42180246600174EAD /* DDYQRCodeImgVC.m */,
 			);
 			path = DDYQRCodeExample;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 				A469EAC9217EAEED00174EAD /* ViewController.m in Sources */,
 				A469EADB21800AEF00174EAD /* NSBundle+DDYQRCode.m in Sources */,
 				A469EAC8217EAEED00174EAD /* main.m in Sources */,
+				A469EAE52180246600174EAD /* DDYQRCodeImgVC.m in Sources */,
 				A469EAC5217EAEED00174EAD /* AppDelegate.m in Sources */,
 				A469EACE217EAF7100174EAD /* DDYQRCodeManager.m in Sources */,
 			);

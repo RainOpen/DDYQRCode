@@ -1,5 +1,6 @@
 #import "ViewController.h"
-#import "DDYQRCodeScanController.h"
+#import "DDYQRCode.h"
+#import "DDYQRCodeImgVC.h"
 
 @interface ViewController ()
 
@@ -39,6 +40,7 @@
 }
 
 - (void)handleMyQRCode {
+     [self.navigationController pushViewController:[DDYQRCodeImgVC new] animated:YES];
 }
 
 @end
