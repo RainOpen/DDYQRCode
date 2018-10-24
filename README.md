@@ -1,6 +1,9 @@
 # DDYQRCode
+
 二维码/条形码生成，二维码扫描(相机/图片/相册扫描)，光强检测(开灯)，扫描结果音效，扫描镂空界面，各种样式二维码
 
+
+ ![DDYQRCodeCamera.jpg](https://github.com/starainDou/DDYDemoImage/blob/master/DDYQRCodeCamera.jpg) ![DDYQRCodeImage.png](https://github.com/starainDou/DDYDemoImage/blob/master/DDYQRCodeImage.png)
 
 > # 集成
 
@@ -10,7 +13,7 @@
  
   2.#import <DDYQRCode.h>
 
-[使用方案](https://github.com/starainDou/DDYQRCode)
+  [使用方案](https://github.com/starainDou/DDYQRCode)
 
 * 文件夹拖入工程方式
   
