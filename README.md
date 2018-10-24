@@ -21,7 +21,7 @@
 
   2.#import "DDYQRCode.h"
 
-> # 扫描
+> # 生成
 
 * 生成普通二维码
 
@@ -89,14 +89,31 @@
 ```                                    
     
 
-> # 生成
+> # 扫描
+
+  * 直接利用模板控制器
+
+  模板提供了两种样式（微信绿色扫描线、微博橘黄扫描格）
+
+```
+DDYQRCodeScanController *vc = [[DDYQRCodeScanController alloc] init];
+    [vc setStyle:DDYQRCodeScanViewStyleGrid];
+    [vc setIsEffectRectOnlyInScanview:YES];
+    [vc setScanResultBlock:^(NSString *resultStr, NSError *scanError, UIViewController *scanVC) {
+        DDYQRCodeResultController *resultVC = [[DDYQRCodeResultController alloc] init];
+        resultVC.resultStr = resultStr;
+        [self.navigationController popViewControllerAnimated:NO];
+        [self.navigationController pushViewController:resultVC animated:YES];
+    }];
+    [self.navigationController pushViewController:vc animated:YES];
+```
 
 
   * 竖屏扫描
 
 ```
 // 如果需要横屏请修改源码（横屏metadataOutput.rectOfInterest重新计算或全屏方式扫描），不建议添加横屏扫描
-[self.qrcodeManager ddy_ScanQRCodeWithPreview:self.view effectiveRect:CGRectMake(DDYScanX, DDYScanY, DDYScanWH, DDYScanWH)];
+[self.qrcodeManager ddy_ScanQRCodeWithPreview:self.view effectiveRect:CGRectMake(0, 0, 1, 1)];
 ```
 
   * 图片扫描
