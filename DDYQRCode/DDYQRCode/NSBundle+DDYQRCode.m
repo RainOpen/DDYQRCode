@@ -21,17 +21,14 @@
 }
 
 + (NSString *)ddyLocalizedStringForKey:(NSString *)key value:(NSString *)value {
-    static NSBundle *bundle = nil;
-    if (!bundle) {
-        NSString *language = [[NSUserDefaults standardUserDefaults] objectForKey:@"DDYLanguages"];
-        if (!language) language = [NSLocale preferredLanguages].firstObject;
-        if ([language containsString:@"zh-Hans"]) {
-            language = @"zh-Hans";
-        } else {
-            language = @"en";
-        }
-        bundle = [NSBundle bundleWithPath:[[NSBundle ddyQRCodeBundle] pathForResource:language ofType:@"lproj"]];
+    NSString *language = [[NSUserDefaults standardUserDefaults] objectForKey:@"DDYLanguages"];
+    if (!language) language = [NSLocale preferredLanguages].firstObject;
+    if ([language containsString:@"zh-Hans"]) {
+        language = @"zh-Hans";
+    } else {
+        language = @"en";
     }
+    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle ddyQRCodeBundle] pathForResource:language ofType:@"lproj"]];
     return [bundle localizedStringForKey:key value:value table:@"DDYQRCode"];
 }
 
