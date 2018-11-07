@@ -627,10 +627,16 @@ NSErrorDomain DDYQRError = @"DDYQRError";
 #pragma mark 利用UIImagePickerViewController选取二维码图片
 - (void)ddy_scanQRCodeWithImagePickerFromCurrentVC:(UIViewController *)controller {
     if (!controller) return;
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //（选择类型）表示仅仅从相册中选取照片
-    imagePicker.delegate = self;
-    [controller presentViewController:imagePicker animated:YES completion:nil];
+    [self performSelectorOnMainThread:@selector(presentImagePickerFromViewController:) withObject:controller waitUntilDone:NO];
+}
+
+- (void)presentImagePickerFromViewController:(UIViewController *)controller {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //（选择类型）表示仅仅从相册中选取照片
+        imagePicker.delegate = self;
+        [controller presentViewController:imagePicker animated:YES completion:nil];
+    });
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
