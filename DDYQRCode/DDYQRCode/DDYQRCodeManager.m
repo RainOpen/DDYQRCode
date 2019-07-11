@@ -12,7 +12,6 @@
 @import AssetsLibrary;  // 相册 iOS 6-9
 @import Photos;         // 相册 iOS 8+
 
-@interface DDYQRCodeManager ()<AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /** 捕获会话 */
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 /** 元数据输出 */
@@ -118,8 +117,10 @@ NSErrorDomain DDYQRError = @"DDYQRError";
 {
     CGRect extent = CGRectIntegral(image.extent);
     CGFloat scale = MIN(resultSize.width/CGRectGetWidth(extent), resultSize.height/CGRectGetHeight(extent));
+    CGFloat width = CGRectGetWidth(extent) * scale;
+    CGFloat height = CGRectGetHeight(extent) * scale;
     CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
-    CGContextRef contentRef = CGBitmapContextCreate(nil, resultSize.width, resultSize.height, 8, 0, colorSpaceRef, kCGBitmapByteOrder32Little|kCGImageAlphaNoneSkipLast);
+    CGContextRef contentRef = CGBitmapContextCreate(nil, width, height, 8, 0, colorSpaceRef, kCGBitmapByteOrder32Little|kCGImageAlphaNoneSkipLast);
     CIContext *context = [CIContext contextWithOptions:nil];
     CGImageRef imageRef = [context createCGImage:image fromRect:extent];
     CGContextSetInterpolationQuality(contentRef, kCGInterpolationNone);
@@ -561,7 +562,6 @@ NSErrorDomain DDYQRError = @"DDYQRError";
             BOOL success = metadataObjects && metadataObjects.count && ![DDYQRCodeManager ddy_blankString:resultStr];
             if (success)  {
                 [self ddy_stopRunningSession];
-                [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(scanTimeout) object:nil];
                 [self scanQRCodeResult:resultStr scanError:[NSError errorWithDomain:DDYQRError code:DDYQRErrorCameraSuccess userInfo:nil]];
             }
         });
@@ -599,6 +599,7 @@ NSErrorDomain DDYQRError = @"DDYQRError";
     if ([_captureSession isRunning]) {
         [_captureSession stopRunning];
     }
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(scanTimeout) object:nil];
 }
 
 - (void)scanTimeout {
