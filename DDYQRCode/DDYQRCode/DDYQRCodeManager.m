@@ -12,6 +12,7 @@
 @import AssetsLibrary;  // 相册 iOS 6-9
 @import Photos;         // 相册 iOS 8+
 
+@interface DDYQRCodeManager ()<AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 /** 捕获会话 */
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 /** 元数据输出 */
