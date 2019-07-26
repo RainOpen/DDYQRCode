@@ -58,6 +58,7 @@
     if (!_scanView) {
         _scanView = [[DDYQRCodeScanView alloc] initWithFrame:DDYScanRect];
         _scanView.style = self.style;
+        _scanView.scanRectColor = self.scanRectColor;
     }
     return _scanView;
 }
