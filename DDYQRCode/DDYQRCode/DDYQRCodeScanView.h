@@ -16,5 +16,7 @@ typedef NS_ENUM(NSInteger, DDYQRCodeScanViewStyle) {
 @interface DDYQRCodeScanView : UIView
 /** 扫描样式 */
 @property (nonatomic, assign) DDYQRCodeScanViewStyle style;
+/** 扫描框和扫描线颜色 */
+@property (nonatomic, strong) UIColor *scanRectColor;
 
 @end
