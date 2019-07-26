@@ -49,6 +49,7 @@
 - (void)handleScan2 {
     DDYQRCodeScanController *vc = [[DDYQRCodeScanController alloc] init];
     [vc setStyle:DDYQRCodeScanViewStyleGrid];
+    [vc setScanRectColor:[UIColor redColor]];
     [vc setIsEffectRectOnlyInScanview:YES];
     [vc setScanResultBlock:^(NSString *resultStr, NSError *scanError, UIViewController *scanVC) {
         DDYQRCodeResultController *resultVC = [[DDYQRCodeResultController alloc] init];
