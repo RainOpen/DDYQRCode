@@ -26,6 +26,8 @@
 
 /** 扫描样式 默认DDYQRCodeScanViewStyleLine */
 @property (nonatomic, assign) DDYQRCodeScanViewStyle style;
+/** 扫描条和扫描框颜色 */
+@property (nonatomic, strong) UIColor *scanRectColor;
 /** 有效区域是否只限扫描框内 默认全屏范围 */
 @property (nonatomic, assign) BOOL isEffectRectOnlyInScanview;
 
