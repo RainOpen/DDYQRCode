@@ -1,6 +1,6 @@
 Pod::Spec.new do |ddyspec|
     ddyspec.name         = 'DDYQRCode'
-    ddyspec.version      = '1.1.0'
+    ddyspec.version      = '1.1.1'
     ddyspec.summary      = '二维码/条形码生成'
     ddyspec.homepage     = 'https://github.com/RainOpen/DDYQRCode'
     ddyspec.license      = 'MIT'
