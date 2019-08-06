@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 typedef NS_ENUM(NSInteger, DDYQRCodeGradientType) {
     DDYQRCodeGradientTypeNone,        // 纯色.
     DDYQRCodeGradientTypeHorizontal,  // 水平渐变.
@@ -18,6 +16,8 @@ typedef NS_ENUM(NSInteger, DDYQRCodeGradientType) {
 };
 
 @protocol DDYQRCodeManagerDelegate <NSObject>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @required
 /** 扫描结果delegate */
@@ -27,7 +27,13 @@ typedef NS_ENUM(NSInteger, DDYQRCodeGradientType) {
 /** 光强检测delegate */
 - (void)ddy_QRCodeBrightnessValue:(CGFloat)brightnessValue;
 
+NS_ASSUME_NONNULL_END
+
 @end
+
+
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface DDYQRCodeManager : NSObject
 
