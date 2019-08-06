@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSInteger, DDYQRCodeGradientType) {
     DDYQRCodeGradientTypeNone,        // 纯色.
     DDYQRCodeGradientTypeHorizontal,  // 水平渐变.
@@ -70,7 +72,7 @@ extern NSErrorDomain DDYQRError;
  @param size 条形码大小
  @param success 成功回调传出生成的条形码图片
  */
-+ (void)ddy_BarCodeWithString:(NSString *_Nonnull)string
++ (void)ddy_BarCodeWithString:(NSString *)string
                          size:(CGSize)size
                       success:(void (^)(UIImage *barCodeImage))success;
 
@@ -82,10 +84,10 @@ extern NSErrorDomain DDYQRError;
  @param bgColor 背景色
  @param success 成功回调传出生成的条形码图片
  */
-+ (void)ddy_BarCodeWithString:(NSString *_Nonnull)string
++ (void)ddy_BarCodeWithString:(NSString *)string
                          size:(CGSize)size
-                        color:(UIColor *_Nonnull)color
-                      bgColor:(UIColor *_Nonnull)bgColor
+                        color:(UIColor *)color
+                      bgColor:(UIColor *)bgColor
                       success:(void (^)(UIImage *barCodeImage))success;
 
 /**
@@ -94,7 +96,7 @@ extern NSErrorDomain DDYQRError;
  @param widthAndHeight 二维码正方形宽高
  @param success 成功回调传出生成的二维码图片
  */
-+ (void)ddy_QRCodeWithString:(NSString *_Nonnull)string
++ (void)ddy_QRCodeWithString:(NSString *)string
               widthAndHeight:(CGFloat)widthAndHeight
                      success:(void (^)(UIImage *QRCodeImage))success;
 
@@ -106,9 +108,9 @@ extern NSErrorDomain DDYQRError;
  @param logoScale logo相对比例 推荐0.2
  @param success 成功回调传出生成的二维码图片
  */
-+ (void)ddy_QRCodeWithString:(NSString *_Nonnull)string
++ (void)ddy_QRCodeWithString:(NSString *)string
               widthAndHeight:(CGFloat)widthAndHeight
-                   logoImage:(UIImage *_Nonnull)logoImage
+                   logoImage:(UIImage *)logoImage
                    logoScale:(CGFloat)logoScale
                      success:(void (^)(UIImage *QRCodeImage))success;
 
@@ -120,10 +122,10 @@ extern NSErrorDomain DDYQRError;
  @param bgColor 背景色
  @param success 成功回调传出生成的二维码图片
  */
-+ (void)ddy_QRCodeWithString:(NSString *_Nonnull)string
++ (void)ddy_QRCodeWithString:(NSString *)string
               widthAndHeight:(CGFloat)widthAndHeight
-                       color:(UIColor *_Nonnull)color
-                     bgColor:(UIColor *_Nonnull)bgColor
+                       color:(UIColor *)color
+                     bgColor:(UIColor *)bgColor
                      success:(void (^)(UIImage *QRCodeImage))success;
 
 /**
@@ -135,11 +137,11 @@ extern NSErrorDomain DDYQRError;
  @param endColor 结束颜色
  @param success 成功回调传出生成的二维码图片
  */
-+ (void)ddy_QRCodeCircleStyleWithString:(NSString *_Nonnull)string
++ (void)ddy_QRCodeCircleStyleWithString:(NSString *)string
                          widthAndHeight:(CGFloat)widthAndHeight
                            gradientType:(DDYQRCodeGradientType)gradientType
-                             startColor:(UIColor *_Nonnull)startColor
-                               endColor:(UIColor *_Nonnull)endColor
+                             startColor:(UIColor *)startColor
+                               endColor:(UIColor *)endColor
                                 success:(void (^)(UIImage *QRCodeImage))success;
 
 #pragma mark - ////////////////////////////////////// 二维码(条形码)扫描 //////////////////////////////////////
@@ -161,7 +163,7 @@ extern NSErrorDomain DDYQRError;
  图片读取二维码
  @param image 要扫描的图片(不为空)
  */
-- (void)ddy_scanQRCodeWithImage:(UIImage *_Nonnull)image;
+- (void)ddy_scanQRCodeWithImage:(UIImage *)image;
 
 /**
  利用UIImagePickerViewController选取二维码图片
@@ -169,7 +171,7 @@ extern NSErrorDomain DDYQRError;
  
  @param controller 传入当前控制器以供跳转
  */
-- (void)ddy_scanQRCodeWithImagePickerFromCurrentVC:(UIViewController *_Nonnull)controller;
+- (void)ddy_scanQRCodeWithImagePickerFromCurrentVC:(UIViewController *)controller;
 
 #pragma mark - ////////////////////////////////////// 音效和亮灯 //////////////////////////////////////
 /**
@@ -193,3 +195,5 @@ extern NSErrorDomain DDYQRError;
 + (UIImage *)scanImageWithColor:(UIColor *)color;
 
 @end
+
+NS_ASSUME_NONNULL_END
