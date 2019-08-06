@@ -9,7 +9,7 @@
 
 * CocoaPods方式 
 
-  1.pod 'DDYQRCode', '~> 1.0.1' 
+  1.pod 'DDYQRCode', '~> 1.1.1' 
  
   2.#import <DDYQRCode.h>
 
